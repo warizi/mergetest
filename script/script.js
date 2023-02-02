@@ -82,6 +82,9 @@
     shareExit.onclick = () => {
         shareCon.style.display = 'none';
         shareBg.style.display = 'none';
-        shareBg.style.zindex = '0';
+    }
+    shareBg.onclick = () => {
+        shareCon.style.display = 'none';
+        shareBg.style.display = 'none';
     }
 })();
