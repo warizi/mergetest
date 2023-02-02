@@ -36,57 +36,52 @@
         }
     }
 
-    // 포트폴리오 새창 열기
-    const folioOnclick = document.querySelector('.folio-container');
+    //포트폴리오 새창
+    const folioOnclick = document.querySelectorAll('.folio-container');
+    const onclickNew = document.querySelector('.onclick-new');
+    const circleNew = document.querySelectorAll('.circle');
     const bodyPush = document.querySelector('.new-tab-container');
-    let newTab = `
-    <div class="onclick-new">
-        <img src="image/hover.png" alt="" class="new-hover">
-        <div class="new-main-container">
-            <h1 class="new-title">
-                THE BLUE - Color Project
-            </h1>
-            <div class="new-info">2022.01.16  |  일러스트레이션</div>
-            <div class="new-content-container">
-                <div class="new-main-img"></div>
-                <div class="new-img-container">
-                    <div class="new-sub-img aa"></div>
-                    <div class="new-sub-img bb"></div>
-                    <div class="new-sub-img cc"></div>
-                    <div class="new-sub-img dd"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="circle aaa"></div>
-    <div class="circle bbb">
-        <img src="image/new plus.png" alt="">
-    </div>
-    <div class="circle ccc">
-        <img src="image/뉴하트.png" alt="">
-    </div>
-    <div class="circle ddd">
-        <img src="image/컬렉션.png" alt="">
-    </div>
-    <div class="circle eee">
-        <img src="image/공유하기.png" alt="">
-    </div>
-    `;
-
-    folioOnclick.onclick = ()=> {
-        bodyPush.innerHTML = newTab;
-        folioClose.style.display = 'block';
-
+  
+    for (let a of folioOnclick) {
+        a.onclick = ()=> {
+            // bodyPush.innerHTML = newTab;
+            folioClose.style.display = 'block';
+            onclickNew.style.display = 'block';
+            for(let b of circleNew) {
+                b.style.display = 'block';
+            }
+            console.log(shareBtn);
+    
+        }
     }
+
+    
 
     // 포트폴리오 새창 닫기
     const folioClose = document.querySelector('.new-bg');
     folioClose.onclick = () => {
-        bodyPush.innerHTML = `<div></div>`;
         folioClose.style.display = 'none';
+        onclickNew.style.display = 'none';
+        for(let b of circleNew) {
+            b.style.display = 'none';
+        }
     }
     
+    //공유하기 새창
+    const shareBtn = document.querySelector('.eee');
+    const shareCon = document.querySelector('.share-container');
+    const shareBg = document.querySelector('.share-bg');
+    shareBtn.onclick = () => {
+        shareCon.style.display = 'block';
+        shareBg.style.display = 'block';
+        shareBg.style.zindex = '4999';
+    }
 
+    //공유하기 새창 닫기
+    const shareExit = document.querySelector('.share-exit');
+    shareExit.onclick = () => {
+        shareCon.style.display = 'none';
+        shareBg.style.display = 'none';
+        shareBg.style.zindex = '0';
+    }
 })();
