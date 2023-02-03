@@ -44,13 +44,18 @@
   
     for (let a of folioOnclick) {
         a.onclick = ()=> {
+            const qr = document.querySelector('.new-main-img');
             // bodyPush.innerHTML = newTab;
             folioClose.style.display = 'block';
             onclickNew.style.display = 'block';
+            onclickNew.classList.toggle('.click-hg');
             for(let b of circleNew) {
                 b.style.display = 'block';
             }
             console.log(shareBtn);
+            if (a == folioOnclick[1]) {
+                qr.innerHTML = `<img src="image/qr.png" alt="" class="qr">`;
+            }
     
         }
     }
@@ -62,6 +67,7 @@
     folioClose.onclick = () => {
         folioClose.style.display = 'none';
         onclickNew.style.display = 'none';
+        onclickNew.classList.toggle('.click-hg');
         for(let b of circleNew) {
             b.style.display = 'none';
         }
