@@ -167,7 +167,9 @@ main {
     background-color: #ffffff;
     z-index: 3000;
     padding: 15px;
-    left: 1357px;
+    /* left: 1357px; */
+    left: calc(1000px + (100vw - 950px)/2);
+    transition-duration: 1.4s;
 }
 .new-main-img {
     display: flex;
@@ -244,15 +246,14 @@ main {
     height: 756px;
     background-color: #ffffff;
     z-index: 3000;
-    left: 370px;
+    left: calc((100vw - 943px) / 2);
     top: 80px;
     margin: 0 a;
     border-radius: 15px;
     padding: 60px 44px;
     box-shadow: 0 0 20px 0 #000000;
-    transition-delay: 2s;
     display: none;
-    transition-duration: 3s;
+    transition-duration: 0.8s;
 }
 .click-hg {
     left: 370px;
@@ -332,13 +333,14 @@ main {
     display: none;
     position: absolute;
     top: 274px;
-    left: 473px;
+    left: calc((100vw - 733px)/2);
     padding: 26px 36px;
     height: 434px;
     width: 733px;
     border-radius: 15px;
     z-index: 5000;
     background-color: #ffffff;
+    transition: 1s;
 }
 .share-container h2 {
     font-size: 24px;
